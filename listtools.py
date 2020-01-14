@@ -1,5 +1,7 @@
 # Reference:
 # http://code.activestate.com/recipes/278258/
+from functools import reduce
+import random
 
 def sumList(L):
     return reduce(lambda x,y:x+y, L)

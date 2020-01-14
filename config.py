@@ -13,6 +13,6 @@ config = {
     # when set to 1, we create a new map this run. When set to 0, loads a new map
     'new_map' : True,
     'runs_per_screenshot' : 10,
-    'data_directory' : '/home/monk/genetic_pid_data',
+    'data_directory' : './genetic_pid_data',
     'map_filename' : 'map.csv'
 }

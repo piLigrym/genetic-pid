@@ -23,7 +23,7 @@ class Map:
 
         current_map_value = 0
 
-        csvWriter = csv.writer(open(filePath, 'wb'), delimiter=',',
+        csvWriter = csv.writer(open(filePath, 'w'), delimiter=',',
                                 quotechar='|', quoting=csv.QUOTE_MINIMAL)
 
         for time in range(maxTimesteps):

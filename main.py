@@ -2,8 +2,8 @@ import random
 import math
 import matplotlib.pyplot as plt
 import os
-from lib.simulation import Simulation
-from lib import listtools
+from simulation import Simulation
+import listtools
 from config import config
 
 if not os.path.exists(config['data_directory']):
@@ -41,33 +41,31 @@ for i in range(config['max_runs']):
     avg_values.append(listtools.avgList(fitness_values))
 
 
-    print "Run " + str(i) + ": max value " + str(max_values[i]) + ", avg value " + str(avg_values[i])
-
-
-# plot fitness results of each run
-"""
+    print("Run " + str(i) + ": max value " + str(max_values[i]) + ", avg value " + str(avg_values[i]))
+    print(population[index_of_champion].kp, population[index_of_champion].kd, population[index_of_champion].ki)
+    print('\n')
 
 plt.figure()
 plt.plot()
 plt.title("Fitness Values Over Time")
 
-plt.plot(range(MAX_RUNS), max_values, label = r"Max Value")
-plt.plot(range(MAX_RUNS), avg_values, label = r"Average Value")
+plt.plot(range(config['max_runs']), max_values, label = r"Max Value")
+plt.plot(range(config['max_runs']), avg_values, label = r"Average Value")
 plt.legend(loc='lower right')
 plt.xlabel("Run")
 plt.ylabel("Value")
-plt.savefig("results/fitness_values_over_time.png", format="png")
+plt.savefig("fitness_values_over_time.png", format="png")
 
 # plot values of parameters for each run
 plt.figure()
 plt.plot()
 plt.title("Champion Gain Values Per Run")
 
-plt.plot(range(MAX_RUNS), kp_values, label = r"Kp")
-plt.plot(range(MAX_RUNS), kd_values, label = r"Kd")
-plt.plot(range(MAX_RUNS), ki_values, label = r"Ki")
+plt.plot(range(config['max_runs']), kp_values, label = r"Kp")
+plt.plot(range(config['max_runs']), kd_values, label = r"Kd")
+plt.plot(range(config['max_runs']), ki_values, label = r"Ki")
 plt.legend(loc='center right')
 plt.xlabel("Run")
 plt.ylabel("Value")
-plt.savefig("results/champion_gain_values_per_run.png", format="png")
-"""
+plt.savefig("champion_gain_values_per_run.png", format="png")
+
